@@ -1,7 +1,9 @@
-# 🚀  fastapi-postgresql🎉
+# 🚀  fastapi-postgresql 🎉
 
-Sample project for KFU-CODE. A two days training session on Sunday & Monday Nov 26-27 2023 from 3-5 pm. 
+Workshop Meterial for KFU-CODE.
+A two days training session on Sunday & Monday Nov 26-27 2023 from 3-5 pm. 
 
+Note: Please Download & Setup before the workshop.
 
 ## Setup & Run 🏃‍♂️
 
