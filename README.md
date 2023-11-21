@@ -3,24 +3,38 @@
 Workshop Material for KFU-CODE.
 A two days training session on Sunday & Monday Nov 26-27 2023 from 3-5 pm. 
 
-Note: Please Download & Setup before the workshop.
+Note: Please Download & Setup all tools before the workshop.
 
 ## Setup & Run 🏃‍♂️
+-   Download and install Docker with compose
+https://www.docker.com/get-started/
 
-- Download and install Docker with compose
+-   VSCode 
+https://code.visualstudio.com/download
 
+-   Git & Git Bash
+https://git-scm.com/downloads
+
+- Clone the project using git
+    ```
+    git clone https://github.com/luayalshawi/fastapi-postgresql.git
+    ```
 -   Setup and Build:
 
-    set up a .env file with your configuration.  For a basic version for local testing use:  
-    ```bash
-    cp dot-env-template .env
-    ```
-    Be aware that .env is *excluded from git* because it contains secrets, API keys and so on.  **Never put your .env file into git.**
+    - Setup your local env file
 
-    Then build and start the test/debug stack with:
-    ```bash
-    docker-compose up --build
-    ```
+        Either, by copying dot-env-template and renaming to .env
+
+        or use the below command on bash terminal while in the project directory
+
+        ```bash
+        cp dot-env-template .env
+        ```
+
+    - Build and start the docker containers while in the project path:
+        ```bash
+        docker-compose up --build
+        ```
 
     Then:
     - Visit http://localhost:4000/docs for the interactive API docs (Swagger). For initial super-username and password to first authenticate see your **.env** file.
@@ -34,5 +48,5 @@ Note: Please Download & Setup before the workshop.
 2. **PostgreSQL Integration** - Store data like a pro. No more data loss nightmares!
 3. **Docker Integration** - Set sail with a consistent environment. Because why let tech discrepancies ruin your day?
 
-Base strucutre is taken from https://github.com/bibektimilsina000/FastAPI-PgStarterKit/tree/main
+Based on https://github.com/bibektimilsina000/FastAPI-PgStarterKit/tree/main
 
