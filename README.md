@@ -33,7 +33,7 @@ https://git-scm.com/downloads
 
     - Build and start the docker containers while in the project path:
         ```bash
-        docker-compose up --build
+        docker-compose up --build -d
         ```
 
     Then:
