@@ -15,10 +15,23 @@ https://code.visualstudio.com/download
 -   Git & Git Bash
 https://git-scm.com/downloads
 
+The containers are UNIX based and will load the project using host file systems.
+Therore, we may need to make Git check out files with Unix-style file endings on Windows
+
+```
+git config --global core.autocrlf false
+```
+
 - Clone the project using git
     ```
     git clone https://github.com/luayalshawi/fastapi-postgresql.git
     ```
+
+    Navigate to the project directory
+    ```
+    cd fastapi-postgresql
+    ```
+
 -   Setup and Build:
 
     - Setup your local env file
