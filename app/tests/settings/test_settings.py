@@ -34,13 +34,7 @@ def test_mandatory_and_defaults() -> None:
     settings = make_settings(MANDATORY)
     for key, value in MANDATORY.items():
         assert str(getattr(settings, key)) == str(value)
-    assert settings.EMAIL_TEMPLATES_DIR == "/app/app/email-templates/build"
-    assert settings.EMAILS_ENABLED is False
-    assert settings.EMAILS_FROM_EMAIL is None
-    assert settings.EMAILS_FROM_NAME == settings.PROJECT_NAME
-    assert settings.EMAIL_RESET_TOKEN_EXPIRE_HOURS == 48
     assert settings.EMAIL_TEST_USER == "test@example.com"
-    assert settings.EMAIL_TEMPLATES_DIR == "/app/app/email-templates/build"
 
 
 def test_assemble_db_connection() -> None:
@@ -62,14 +56,3 @@ def test_backend_cors_origins() -> None:
         "http://localhost:3000/",
     ]
 
-
-def test_email_enabled() -> None:
-    settings = make_settings(
-        MANDATORY
-        | {
-            "SMTP_HOST": "www.example.com",
-            "SMTP_PORT": 25,
-            "EMAILS_FROM_EMAIL": random_email(),
-        }
-    )
-    assert settings.EMAILS_ENABLED is True

@@ -52,33 +52,6 @@ class Settings(BaseSettings):
         else:
             return None
 
-    SMTP_TLS: bool = True
-    SMTP_PORT: Optional[int] = None
-    SMTP_HOST: Optional[str] = None
-    SMTP_USER: Optional[str] = None
-    SMTP_PASSWORD: Optional[str] = None
-    EMAILS_FROM_EMAIL: Optional[EmailStr] = None
-    EMAILS_FROM_NAME: Optional[str] = None
-
-    @field_validator("EMAILS_FROM_NAME", mode="before")
-    @classmethod
-    def get_project_name(cls, v: Optional[str], info: ValidationInfo) -> str:
-        if not v:
-            return info.data.get("PROJECT_NAME")
-        return v
-
-    EMAIL_RESET_TOKEN_EXPIRE_HOURS: int = 48
-    EMAIL_TEMPLATES_DIR: str = "/app/app/email-templates/build"
-    EMAILS_ENABLED: bool = False
-
-    @field_validator("EMAILS_ENABLED", mode="before")
-    @classmethod
-    def get_emails_enabled(cls, v: bool, info: ValidationInfo) -> bool:
-        return bool(
-            info.data.get("SMTP_HOST")
-            and info.data.get("SMTP_PORT")
-            and info.data.get("EMAILS_FROM_EMAIL")
-        )
 
     EMAIL_TEST_USER: EmailStr = "test@example.com"
     FIRST_SUPERUSER: EmailStr
